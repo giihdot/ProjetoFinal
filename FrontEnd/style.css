@@ -1,0 +1,65 @@
+    body {
+        background-color: #f4f1ec;
+    }
+
+    header {
+        display: flex;
+        background-color: #4f6c26;
+        height: 18vh;
+        width: 85vw;
+        font-size: 6em;
+        margin-top: 3%;
+        color: #f4f1ec;
+        font-family:'Times New Roman', Times, serif;
+        text-align: center;
+        align-content: space-around;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .titulo {
+        display: flex;
+        flex-direction: row-reverse;
+        align-self: center;
+    }
+
+    img {
+        width: 14vw;
+        height: 20vh;
+        margin-top: 3%;
+    }
+
+    nav {
+        list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #994500;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    }
+
+    footer {
+        background-color: #994500;
+        height: 18vh;
+    }
+
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      #prevBtn {
+        left: 10px;
+      }
+      #nextBtn {
+        right: 10px;
+      }
+      
