@@ -39,7 +39,9 @@ header {
     width: 80vw;
     text-align: center;
     font-size: 1.2em;
-    color: #4f6c26; 
+    color: #ffffff; 
+    font-family: 'Times New Roman', Times, serif;
+    background-color:#4f6c26;
 }
 
 .parallax {
@@ -85,8 +87,21 @@ footer {
     background-color: #80451f;
     color: #f4f1ec; 
     padding: 1em ;
-    margin-top: 3%;
-    width: 100vw;
+    width: 98vw;
     margin: 3% auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+   flex-direction: row;
+   display: flex;
+   justify-content:center;
+   gap: 15%;
+}
+
+.imgM {
+    width: 15vw;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px;
+
+    
 }
