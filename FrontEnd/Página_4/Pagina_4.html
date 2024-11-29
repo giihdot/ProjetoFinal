@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Pagina_4.css">
+    <title> MENSAGENS </title>
+</head>
+
+<body>
+
+    <header>
+        MENSAGENS
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href=""> HOME PAGE </a></li>
+            <li><a
+                    href="file:///C:/Users/ADM/Desktop/Julia%20-%20Trabalhos/SENAI/Pojeto_Final/ProjetoFinal/FrontEnd/P%C3%A1gina_2/Pagina_2.html">
+                    GRATIDÃO </a></li>
+            <li><a
+                    href="file:///C:/Users/ADM/Desktop/Julia%20-%20Trabalhos/SENAI/Pojeto_Final/ProjetoFinal/FrontEnd/P%C3%A1gina_3/Pagina_3.html">
+                    AÇÃO DE GRAÇAS </a></li>
+            <li><a
+                    href="file:///C:/Users/ADM/Desktop/Julia%20-%20Trabalhos/SENAI/Pojeto_Final/ProjetoFinal/FrontEnd/P%C3%A1gina_4/Pagina_4.html">
+                    MENSAGENS </a></li>
+            <li><a
+                    href="file:///C:/Users/ADM/Desktop/Julia%20-%20Trabalhos/SENAI/Pojeto_Final/ProjetoFinal/FrontEnd/Pagina_5/Pagina_5.html">
+                    HISTÓRIAS INSPIRADORAS </a></li>
+            <li><a href="#about"> GRUPO 04 </a></li>
+        </ul>
+    </nav>
+
+    <section class="Junt_1">
+        <section class="Est">
+            <center>
+                <h1 class="h1"> BUSCAR MENSAGEM </h1>
+            </center>
+
+            <p> Escolha uma mensagem, a partir dos números (1 a 30): </p>
+
+            <input type="text" class="barra-escrita" placeholder="Digite um número (1 - 30)" />
+            <button class="button" onclick="buscarMensagem()"> BUSCAR </button>
+
+            <p id="loadingMessage" style="display: none;"> Carregando...</p>
+            <section id="errorMessage" style="display: none;"></section>
+
+            <section class="Mensagem-Info" id="Mensagem_Info" style="display: none;">
+                <p><strong> TEMA: </strong> <span id="pokemonHeight"></span>
+                <p><strong> MENSAGEM: </strong> <span id="pokemonHeight"></span>
+            </section>
+        </section>
+
+        <img class="imagem" src="Imagem_1.webp" alt="Imagem 1">
+    </section>
+
+    <!-- Não sei fazer a parte de colocar a escrita! -->
+
+    <section class="Junt_2">
+        <section class="Esta">
+            <center>
+                <h1 class="tit"> CRIA SUA MENSAGEM </h1>
+            </center>
+
+            <p> Escolha uma mensagem, a partir dos números (1 a 30): </p>
+
+            <input type="text" class="barraa-escrita" placeholder="Digite um número (1 - 30)" />
+            <button class="buttoon" onclick="fetchPokemon()"> BUSCAR </button>
+
+            <p id="loadingMessage" style="display: none;"> Carregando...</p>
+            <section id="errorMessage" style="display: none;"></section>
+
+            <section class="Mensagem-Info" id="Mensagem_Info" style="display: none;">
+                <p><strong> TEMA: </strong> <span id="pokemonHeight"></span>
+                <p><strong> MENSAGEM: </strong> <span id="pokemonHeight"></span>
+            </section>
+        </section>
+        <img class="imagem" src="Imagem_2.webp" alt="Imagem 2">
+    </section>
+
+    <!-- Não sei como fazer essa parte a cima, coloquei para ter apenas base -->
+    <footer>
+        <p>Giovanna Ferreira | N°07</p>
+        <p>Maria Clara Duarte | N°19</p>
+        <p>Julia Piazzoli | N°12</p>
+        <p>Kamilly Barra | N°13</p>
+    </footer>
+
+
+
+    <script src="Pagina_4.js"></script>
+
+
+</body>
+
+</html>
