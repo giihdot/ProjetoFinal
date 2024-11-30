@@ -25,3 +25,6 @@ function createConnection() {
 }
 
 module.exports = createConnection; // Exporta a função createConnection
+
+
+

@@ -31,7 +31,7 @@
                     HISTÓRIAS INSPIRADORAS </a></li>
             <li><a
                     href="file:///C:/Users/ADM/Desktop/Julia%20-%20Trabalhos/SENAI/Pojeto_Final/ProjetoFinal/FrontEnd/Pagina_6/Pagina_6.html">
-                    GRUPO 04 </a></li>
+                    EQUIPE </a></li>
         </ul>
     </nav>
 
@@ -43,11 +43,20 @@
 
         <section class="Junt">
             <input type="text" class="barra-escrita" placeholder="Digite um número (1 - 15)" />
-            <button class="button" onclick="buscarMensagem()"> BUSCAR </button>
+            <button class="button" onclick="buscarHist()"> BUSCAR </button>
         </section>
 
-        <p id="loadingMessage" style="display: none;"> Carregando...</p>
-        <section id="errorMessage" style="display: none;"></section>
+        <p id="loadingHist" style="display: none;"> Carregando...</p>
+        <section id="errorHist" style="display: none;"></section>
+
+        <!-- Seção para exibir as histórias -->
+        <section class="Hist_Info" id="Hist_Info" style="display: none;">
+            <p><strong>Tema:</strong> <span id="Hist_Tema"></span></p>
+            <p><strong>Mensagem:</strong> <span id="Hist_Mensagem"></span></p>
+            <img id="Hist_Imagem" src="" alt="Imagem da história" style="max-width: 100%; height: auto;" />
+        </section>
+        
+
 
     </center>
 
