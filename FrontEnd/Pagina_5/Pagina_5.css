@@ -43,3 +43,70 @@ body {
   li a:hover {
     background-color: #80451f;
   }
+
+  .hist {
+    display: flex;
+    flex-direction: column;
+    background-color: #80451f;
+    width: 65vw;
+    padding: 15px;
+    margin-left: 16%;
+  }
+
+  .button {
+    background-color: #4f6c26; /* Cor de fundo */
+    border: none;
+    color: #f4f1ec; /* Cor da letra */
+    font-family: 'Times New Roman', Times, serif; /* Fonte */
+    padding: 13px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .button:active {
+    transform: scale(0.95); /* Reduz o botão levemente */
+    background-color: #2e4909; /* (Opcional) Cor diferente ao clicar */
+  }
+  
+  .barra-escrita {
+    width: 95%; /* Ajuste para a largura desejada */
+    background-color: #f4f1ec; /* Cor de fundo */
+    color: #4f6c26; /* Cor do texto */
+    padding: 8px; /* Adiciona espaço interno para melhorar a aparência */
+    border: 5px solid #4f6c26; /* Borda com cor personalizada */
+    font-family: 'Times New Roman', Times, serif; /* Fonte */
+    font-size: 16px; /* Tamanho da fonte */
+    
+  }
+  
+  .barra-escrita:focus {
+    outline: none; /* Remove o destaque padrão do navegador */
+    border-color: #80451f; /* Muda a cor da borda ao focar */
+  }
+  
+  .Junt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  h1 {
+    background-color: #4f6c26;
+    color: #f4f1ec;
+  }
+
+  footer {
+    text-align: center;
+    background-color: #4f6c26;
+    color: #f4f1ec;
+    padding: 1em;
+    margin-top: 35px;
+    width: 100%;
+    box-shadow: 0px 4px 8px #4a4c47(0, 0, 0, 0.2);
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+  }
+  
