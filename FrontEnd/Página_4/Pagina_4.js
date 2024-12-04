@@ -28,7 +28,7 @@ if (!mensagemId || isNaN(mensagemId) || mensagemId < 1 || mensagemId > 30) {
 
   try {
       // Faz a chamada para o backend para buscar a mensagem
-      const response = await fetch(`http://localhost:3000/mensagens/${mensagemId}`); // URL do backend
+      const response = await fetch(`http://localhost:5000/mensagens/${mensagemId}`); // URL do backend
       const data = await response.json();
 
       if (!response.ok) {

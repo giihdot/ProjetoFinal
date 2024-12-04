@@ -22,7 +22,7 @@ async function buscarHist() {
     loadingMessage.style.display = 'block';
 
     try {
-        const response = await fetch(`http://localhost:3000/historias/${historiaId}`);
+        const response = await fetch(`http://localhost:5000/historias/${historiaId}`);
         const data = await response.json();
 
         if (!response.ok) {
