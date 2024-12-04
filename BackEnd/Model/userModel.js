@@ -124,11 +124,11 @@ exports.getMensagemById = (id, callback) => {
 
     // Evento 'requestCompleted' para retornar o resultado após a execução
     request.on("requestCompleted", () => {
-      callback(null, result); // Retorna o resultado encontrado ou null
+      callback(null, mensagem); // Retorna o resultado encontrado ou null
     });
 
     // Adiciona o parâmetro para o ID
-    request.addParameter("id", TYPES.Int, id);
+    request.addParameter("ID", TYPES.Int, id);
 
     // Executa a consulta SQL no banco de dados
     connection.execSql(request);
