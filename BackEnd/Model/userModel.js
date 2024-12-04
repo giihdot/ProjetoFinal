@@ -3,7 +3,7 @@ const createConnection = require("../db.js"); // Importa a função para criar a
 const { Request, TYPES } = require("tedious"); // Importa as classes necessárias do tedious
 
 // Função para buscar todos as mensagens no banco de dados
-exports.getAllMensagens = (callback) => {
+exports.getAleatoriaMensagem = (callback) => {
   const connection = createConnection(); // Cria a conexão com o banco de dados
 
   // Evento de conexão com o banco de dados
@@ -82,70 +82,14 @@ exports.createMensagem = (data, callback) => {
   connection.connect();
 };
 
-
-
-// Função para buscar um usuário pelo ID
-exports.getMensagemById = (id, callback) => {
-  if (isNaN(id) || id <= 0) {
-    return callback(new Error("ID inválido"), null);
-  }
-
-  const connection = createConnection(); // Cria a conexão com o banco de dados
-
-  // Evento de conexão com o banco de dados
-  connection.on("connect", (err) => {
-    if (err) {
-      return callback(err, null); // Trata erros de conexão
-    }
-
-    const query = `SELECT * FROM MensagensCurtas WHERE ID = @id;` // Consulta SQL para buscar o usuário pelo ID
-    const request = new Request(query, (err, rowCount) => {
-      if (err) {
-        return callback(err, null); // Trata erros de execução da consulta
-      }
-
-      if (rowCount === 0) {
-        return callback(null, null); // Retorna null se não encontrar o usuário
-      }
-    });
-
-    // Variável para armazenar o resultado da consulta
-    let mensagem = null;
-
-    // Evento 'row' para capturar o resultado da consulta
-    request.on("row", (columns) => {
-      mensagem = {
-        id: columns[0].value, // Captura o valor da primeira coluna (ID)
-        mensagem: columns[1].value, // Captura o valor da segunda coluna (mensagem)
-        tema: columns[2].value, // Captura o valor da terceira coluna (tema)
-        
-      };
-    });
-
-    // Evento 'requestCompleted' para retornar o resultado após a execução
-    request.on("requestCompleted", () => {
-      callback(null, mensagem); // Retorna o resultado encontrado ou null
-    });
-
-    // Adiciona o parâmetro para o ID
-    request.addParameter("ID", TYPES.Int, id);
-
-    // Executa a consulta SQL no banco de dados
-    connection.execSql(request);
-  });
-
-  // Inicia a conexão com o banco de dados
-  connection.connect();
-};
-
-
-exports.getUsersByPALAVRA = (PALAVRA, callback) => {
+// Inicia função para achar palavras
+exports.getHistoriaByPALAVRA = (PALAVRA, callback) => {
   const connection = createConnection(); // Cria a conexão com o banco de dados
   connection.on('connect', err => {
       if (err) 
           return callback(err, null); // Trata erros de conexão
       
-      const query = `SELECT * FROM PROFESSORES WHERE PALAVRA = @PALAVRA`; // SQL para buscar todas as avaliações
+      const query = `SELECT * FROM HistoriasInspiradoras WHERE PALAVRA = @PALAVRA`; // SQL para buscar todas as avaliações
       const request = new Request(query, (err) => {
           if (err) 
               return callback(err, null); // Trata erros de execução da consulta
@@ -158,9 +102,9 @@ exports.getUsersByPALAVRA = (PALAVRA, callback) => {
       request.on("row", (columns) => {
        result.push = {
           id: columns[0].value, // Captura o valor da primeira coluna (ID)
-          mensagem: columns[1].value, // Captura o valor da segunda coluna (mensagem)
-          tema: columns[2].value, // Captura o valor da terceira coluna (tema)
-          
+          titulo: columns[1].value, // Captura o valor da segunda coluna (titulo)
+          historia: columns[2].value, // Captura o valor da terceira coluna (historia)
+          imagemURL: columns[3].value, // Captura o valor da terceira coluna (imagem)
         };
       });
 
@@ -168,6 +112,7 @@ exports.getUsersByPALAVRA = (PALAVRA, callback) => {
       request.on('requestCompleted', () => {
           callback(null, result); // Retorna os alunos encontrados
       });
+
       request.addParameter("PALAVRA", TYPES.VarChar, PALAVRA);
       connection.execSql(request); // Executa a consulta
   })

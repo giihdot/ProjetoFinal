@@ -109,7 +109,7 @@ h1 {
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  bottom: -35%; /* Coloca o botão a 10% do fundo */
+  bottom: -31%; /* Coloca o botão a 10% do fundo */
 }
 
 /* Efeito ao passar o mouse */

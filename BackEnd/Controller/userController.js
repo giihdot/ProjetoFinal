@@ -2,8 +2,8 @@
 const userModel = require("../Model/userModel"); // Importa o model para interagir com o banco
 
 // Função para lidar com a requisição de listagem de mensagens
-exports.getMensagem = (req, res) => {
-  userModel.getAllMensagens((err, Mensagem) => {
+exports.getAleatoriaMensagem = (req, res) => {
+  userModel.getAleatoriaMensagem((err, Mensagem) => {
     if (err) {
       res.status(500).send("Erro ao buscar mensagem!"); // Retorna um erro 500 se algo deu errado
     } else {
@@ -15,7 +15,7 @@ exports.getMensagem = (req, res) => {
 exports.createMensagem = (req, res) => {
   const { Mensagem } = req.body;
   const { Tema } = req.body;
-  
+
 
   userModel.createMensagem({ Mensagem, Tema }, (err) => {
     if (err) {
@@ -27,27 +27,16 @@ exports.createMensagem = (req, res) => {
 };
 
 
-exports.getMensagemById = (req, res) => {
-  const { id } = req.params;
 
-  userModel.getMensagemById(parseInt(id), (err, Mensagem) => {
+exports.getHistoriaByPALAVRA = (req, res) => {
+  const { palavra } = req.params
+  userModel.getUsersByPALAVRA(palavra, (err, Historia) => {
     if (err) {
-      return res.status(400).send("Erro ao buscar mensagem!"); // Retorna um erro 500 se algo deu errado
+      return res.status(500).send("Erro ao buscar história!");
+    } else if (!Historia) {
+      return res.status(404).send("História não encontrada!");
+    } else {
+      res.json(Historia);
     }
-
-    if (!Mensagem) {
-      return res.status(404).send("Erro ao buscar mensagem!"); // Retorna um erro 500 se algo deu errado
-    }
-
-    res.status(200).json(Mensagem);
-  });
-};
-
-
-exports.getUsersByPALAVRA = (req, res) => {
-  const { PALAVRA } = req.params
-  userModel.getUsersByNOME(NOME, (err, Users) => {
-      if (err) return res.status(500).send("Erro ao buscar história!")
-      res.json(Users)
   })
 }
