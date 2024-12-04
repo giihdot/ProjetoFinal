@@ -12,7 +12,7 @@ exports.getAllMensagens = (callback) => {
       return callback(err, null); // Trata erros de conexão
     }
 
-    const query = `SELECT * FROM MensagensCurtas`; // Consulta SQL para buscar todos os usuários
+    const query = `SELECT TOP 1 * FROM MensagensCurtas ORDER BY NEWID()`; // Consulta SQL para buscar todos os usuários
     const request = new Request(query, (err, rowCount) => {
       if (err) {
         return callback(err, null); // Trata erros de execução da consulta
@@ -137,3 +137,40 @@ exports.getMensagemById = (id, callback) => {
   // Inicia a conexão com o banco de dados
   connection.connect();
 };
+
+
+exports.getUsersByPALAVRA = (PALAVRA, callback) => {
+  const connection = createConnection(); // Cria a conexão com o banco de dados
+  connection.on('connect', err => {
+      if (err) 
+          return callback(err, null); // Trata erros de conexão
+      
+      const query = `SELECT * FROM PROFESSORES WHERE PALAVRA = @PALAVRA`; // SQL para buscar todas as avaliações
+      const request = new Request(query, (err) => {
+          if (err) 
+              return callback(err, null); // Trata erros de execução da consulta
+          
+      });
+
+
+      // Evento 'row' para capturar todas as linhas de resultados
+      const result = [];
+      request.on("row", (columns) => {
+       result.push = {
+          id: columns[0].value, // Captura o valor da primeira coluna (ID)
+          mensagem: columns[1].value, // Captura o valor da segunda coluna (mensagem)
+          tema: columns[2].value, // Captura o valor da terceira coluna (tema)
+          
+        };
+      });
+
+      // Ao completar a consulta, retorna o array com todas as avaliações
+      request.on('requestCompleted', () => {
+          callback(null, result); // Retorna os alunos encontrados
+      });
+      request.addParameter("PALAVRA", TYPES.VarChar, PALAVRA);
+      connection.execSql(request); // Executa a consulta
+  })
+
+  connection.connect(); // Inicia a conexão
+}
