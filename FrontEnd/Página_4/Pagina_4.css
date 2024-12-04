@@ -88,6 +88,7 @@ h1 {
   font-family: 'Times New Roman', Times, serif;
 
 }
+/* Define o estilo do contêiner */
 .Est {
   background-color: #4f6c26;
   color: #f4f1ec;
@@ -95,6 +96,7 @@ h1 {
   width: 28vw;
 }
 
+/* Estilo do botão */
 .button {
   background-color: #80451f; /* Cor de fundo */
   border: none;
@@ -105,27 +107,27 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  bottom: -35%; /* Coloca o botão a 10% do fundo */
 }
+
+/* Efeito ao passar o mouse */
+.button:hover {
+  background-color: #53270a; /* Cor ao passar o mouse */
+}
+
+/* Efeito ao clicar no botão */
 .button:active {
   transform: scale(0.95); /* Reduz o botão levemente */
-  background-color: #53270a; /* (Opcional) Cor diferente ao clicar */
+  background-color: #53270a; /* Cor diferente ao clicar */
 }
 
-.barra-escrita {
-  width: 69%; /* Ajuste para a largura desejada */
-  background-color: #f4f1ec; /* Cor de fundo */
-  color: #4f6c26; /* Cor do texto */
-  padding: 8px; /* Adiciona espaço interno para melhorar a aparência */
-  border: 5px solid #80451f; /* Borda com cor personalizada */
-  font-family: 'Times New Roman', Times, serif; /* Fonte */
-  font-size: 16px; /* Tamanho da fonte */
-  
+#Mensagem_Info {
+  margin-top: 10px;
 }
 
-.barra-escrita:focus {
-  outline: none; /* Remove o destaque padrão do navegador */
-  border-color: #80451f; /* Muda a cor da borda ao focar */
-}
+
 
 /* ---------------------------------------------------------- */
 
@@ -154,6 +156,7 @@ h1 {
   background-color: #80451f;
   color: #f4f1ec;
   padding: 2%;
+  width: 28vw;
 }
 
 .buttoon {

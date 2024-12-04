@@ -31,18 +31,15 @@
                 <h1 class="h1"> BUSCAR MENSAGEM </h1>
             </center>
 
-            <p> Escolha uma mensagem, a partir dos números (1 a 30): </p>
+            <p> Busque uma mensagem para seu Dia de Ação de Graças: </p>
 
-            <input type="text" class="barra-escrita" placeholder="Digite um número (1 - 30)" />
-            <button class="button" onclick="buscarMensagem()"> BUSCAR </button>
-
-            <p id="loadingMessage" style="display: none;"> Carregando...</p>
-            <section id="errorMessage" style="display: none;"></section>
-
-            <section class="Mensagem-Info" id="Mensagem_Info" style="display: none;">
-                <p><strong> TEMA: </strong> <span id="Mensagem_ID"></span>
-                <p><strong> MENSAGEM: </strong> <span id="Mensagem_ID"></span>
+            <section id="loadingMessage" style="display: none;">Carregando...</section>
+            <section id="errorMessage" style="display: none; color: #f4f1ec;"></section>
+            <section id="Mensagem_Info" style="display: none;">
+                <span id="Mensagem_ID"></span>: <span id="Mensagem_ID"></span>
             </section>
+            <button class="button" onclick="mostrarMensagemAleatoria()"> BUSCAR MENSAGEM </button>
+
         </section>
 
         <img class="imagem" src="Imagem_1.webp" alt="Imagem 1">
