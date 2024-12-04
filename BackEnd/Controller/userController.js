@@ -27,7 +27,6 @@ exports.createMensagem = (req, res) => {
 };
 
 
-
 exports.getMensagemById = (req, res) => {
   const { id } = req.params;
 
@@ -43,3 +42,12 @@ exports.getMensagemById = (req, res) => {
     res.status(200).json(Mensagem);
   });
 };
+
+
+exports.getUsersByPALAVRA = (req, res) => {
+  const { PALAVRA } = req.params
+  userModel.getUsersByNOME(NOME, (err, Users) => {
+      if (err) return res.status(500).send("Erro ao buscar história!")
+      res.json(Users)
+  })
+}
