@@ -37,11 +37,7 @@ img {
     width: 12vw;
     height: 95vh;
     background-color: #f4f1ec;
-<<<<<<< HEAD
     background-color: #;
-=======
-    background-color: #80451f;
->>>>>>> 1a19f50c6131dd4696b35d5aa59ec0fa763ed586
     flex-wrap: nowrap;
     align-content: space-around;
     justify-content: space-around;
@@ -145,4 +141,18 @@ button {
 
 .next {
     right: 10px;
+}
+
+footer {
+  margin: 2% auto;
+  text-align: center;
+  background-color: #80451f;
+  color: #f4f1ec;
+  padding: 1em;
+  width: 98%;
+  box-shadow: 0px 4px 8px #4f6c26(0, 0, 0, 0.2);
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  gap: 15%;
 }
