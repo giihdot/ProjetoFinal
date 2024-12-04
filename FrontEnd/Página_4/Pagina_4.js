@@ -1,41 +1,53 @@
 // TESTE BASE - PARA FAZER O NOSSO
 // Função para buscar a mensagem pelo ID
 async function mostrarMensagemAleatoria() {
-    const loadingMessage = document.getElementById('loadingMessage');
-    const errorMessage = document.getElementById('errorMessage');
-    const mensagemInfo = document.getElementById('Mensagem_Info');
-    const temaSpan = document.getElementById('Mensagem_ID');
-    const mensagemSpan = document.getElementById('Mensagem_ID');
+    // Captura os elementos HTML que serão usados para exibir as mensagens e o estado de carregamento
+    const loadingMessage = document.getElementById('loadingMessage');  // Elemento para mostrar o carregamento
+    const errorMessage = document.getElementById('errorMessage');  // Elemento para exibir mensagens de erro
+    const mensagemInfo = document.getElementById('Mensagem_Info');  // Seção onde a mensagem será exibida
+    const temaSpan = document.getElementById('Mensagem_ID');  // Elemento para exibir o tema da mensagem
+    const mensagemSpan = document.getElementById('Mensagem_ID');  // Elemento para exibir o conteúdo da mensagem
 
-    // Limpa mensagens anteriores
-    errorMessage.style.display = 'none';
-    mensagemInfo.style.display = 'none';
+    // Limpa quaisquer mensagens ou seções exibidas anteriormente
+    errorMessage.style.display = 'none';  // Oculta a mensagem de erro, se estava visível
+    mensagemInfo.style.display = 'none';  // Oculta a seção de mensagens, se estava visível
 
-    loadingMessage.style.display = 'block'; // Exibe o carregamento
+    loadingMessage.style.display = 'block'; // Exibe o indicador de carregamento enquanto os dados são buscados
 
     try {
-        // Realiza uma requisição GET para buscar as mensagens no backend
-        const response = await fetch('http://localhost:5000/api/mensagens'); // Substitua pela URL da sua API
+        // Realiza uma requisição assíncrona GET para buscar as mensagens no backend
+        // Substitua pela URL da sua API, que retorna uma lista de mensagens
+        const response = await fetch('http://localhost:5000/api/mensagens'); 
+
+        // Converte a resposta JSON para um objeto JavaScript
         const mensagens = await response.json();
 
+        // Verifica se a resposta da requisição foi bem-sucedida (status HTTP 200-299)
         if (!response.ok) {
+            // Caso a resposta não tenha sido bem-sucedida, lança um erro
             throw new Error('Erro ao buscar as mensagens do servidor.');
         }
 
         // Seleciona uma mensagem aleatória do banco de dados
         const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
 
-        // Exibe os dados da mensagem aleatória
-        temaSpan.textContent = mensagemAleatoria.tema;
-        mensagemSpan.textContent = mensagemAleatoria.mensagem;
-        mensagemInfo.style.display = 'block'; // Exibe a mensagem na tela
+        // Atualiza os elementos na página com os dados da mensagem aleatória
+        temaSpan.textContent = mensagemAleatoria.tema; // Atualiza o conteúdo do tema com a mensagem aleatória
+        mensagemSpan.textContent = mensagemAleatoria.mensagem; // Atualiza o conteúdo da mensagem com a mensagem aleatória
+
+        // Torna visível a seção de informações da mensagem
+        mensagemInfo.style.display = 'block'; 
+
     } catch (error) {
-        errorMessage.textContent = error.message || 'Erro ao mostrar a mensagem.';
-        errorMessage.style.display = 'block';
+        // Se ocorrer um erro durante a requisição ou o processamento dos dados, exibe uma mensagem de erro
+        errorMessage.textContent = error.message || 'Erro ao mostrar a mensagem.';  // Define o texto da mensagem de erro
+        errorMessage.style.display = 'block';  // Torna visível a mensagem de erro
     } finally {
-        loadingMessage.style.display = 'none'; // Esconde o carregamento
+        // Este bloco será executado independentemente de haver erro ou não
+        loadingMessage.style.display = 'none';  // Esconde o indicador de carregamento após o processo ter terminado
     }
 }
+
 
 // -----------------------------------------------------
 
