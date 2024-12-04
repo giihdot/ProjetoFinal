@@ -1,0 +1,145 @@
+body {
+    background-color: #f4f1ec;
+}
+
+header {
+    display: flex;
+    background-color: #4f6c26;
+    height: 18vh;
+    width: 85vw;
+    font-size: 6em;
+    color: #f4f1ec;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Junt_1 {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+img {
+    width: 14vw;
+    height: 20vh;
+}
+
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    width: 12vw;
+    height: 95vh;
+    background-color: #f4f1ec;
+    background-color: #994500;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: stretch;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+  
+  li a {
+    display: block;
+    color: #f4f1ec;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+ /* Altera a cor do link ao passar o mouse */
+
+  li a:hover {
+    background-color: #4f6c26;
+    color: white;
+  }
+
+  .Junt_2 {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: space-around;
+    justify-content: space-between;
+    }
+
+    .Estilo_text {
+        width: 82vw;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 1.0em;
+        background-color: #4f6c26;
+        border: 8px solid #4f6c26;
+        color: white;
+    }
+
+    .Junt_3 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        align-content: space-around;
+        justify-content: space-between;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+          }
+          #prevBtn {
+            left: 10px;
+          }
+          #nextBtn {
+            right: 10px;
+          }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 50vw;
+    margin: 2% auto;
+    overflow: hidden;
+    
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* número de imagens vezes 100% */
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 25%; /* dividido pelo número de imagens */
+    flex-shrink: 0;
+    height: 50vh;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #36520c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 200;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
