@@ -55,14 +55,14 @@ li a:hover {
 }
 
 img {
-  width: 25vw;
-  height: 50vh;
+  width: 22vw;
+  height: 45vh;
 }
 
 .Junt-Img {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .Junt_1 {
