@@ -24,6 +24,7 @@ async function buscarMensagem() {
     // Exibe a mensagem e o tema no HTML
     document.getElementById("Mensagem_ID").innerHTML =  data[0].Mensagem;
     document.getElementById("Mensagem_Info").innerHTML = data[0].Tema;
+
     document.getElementById("Mensagem_Info").style.display = "block";  // Mostra a área com o texto
     document.getElementById("errorMessage").style.display = "none";  // Esconde a área de erro
 

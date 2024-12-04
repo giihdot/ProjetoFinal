@@ -10,6 +10,6 @@ router.get("/mensagem", userController.getAleatoriaMensagem);
 router.post("/mensagem", userController.createMensagem);
 
 // Rota Get para buscar uma mensagem pelo ID
-router.get("historia/:palavra", userController.getHistoriaByPALAVRA);
+router.get("/historia/:palavra", userController.getHistoriaByPalavra);
 
 module.exports = router;

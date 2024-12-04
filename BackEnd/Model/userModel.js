@@ -82,40 +82,48 @@ exports.createMensagem = (data, callback) => {
   connection.connect();
 };
 
-// Inicia função para achar palavras
-exports.getHistoriaByPALAVRA = (PALAVRA, callback) => {
-  const connection = createConnection(); // Cria a conexão com o banco de dados
-  connection.on('connect', err => {
-      if (err) 
-          return callback(err, null); // Trata erros de conexão
-      
-      const query = `SELECT * FROM HistoriasInspiradoras WHERE PALAVRA = @PALAVRA`; // SQL para buscar todas as avaliações
+
+// Função para buscar um usuário pelo nome
+  exports.getHistoriaByPalavra = (palavra, callback) => {
+    const connection = createConnection(); // Cria a conexão com o banco de dados
+  
+    connection.on("connect", (err) => {
+      if (err) {
+        return callback(err, null); // Se houver erro de conexão
+      }
+  
+      // Consulta SQL para buscar um aluno pelo RM
+      const query = `SELECT TOP 1 * FROM HistoriasInspiradoras WHERE Historia LIKE @palavra`;
+
       const request = new Request(query, (err) => {
-          if (err) 
-              return callback(err, null); // Trata erros de execução da consulta
-          
+        if (err) 
+          return callback(err, null); // Se houver erro na execução da consulta
       });
+  
+      
+      request.addParameter("palavra", TYPES.VarChar, `%${palavra}%`); // Adiciona o RM como parâmetro
 
 
-      // Evento 'row' para capturar todas as linhas de resultados
+      // Variável para armazenar os resultados da consulta
       const result = [];
-      request.on("row", (columns) => {
-       result.push = {
-          id: columns[0].value, // Captura o valor da primeira coluna (ID)
-          titulo: columns[1].value, // Captura o valor da segunda coluna (titulo)
-          historia: columns[2].value, // Captura o valor da terceira coluna (historia)
-          imagemURL: columns[3].value, // Captura o valor da terceira coluna (imagem)
-        };
+  
+      // Evento 'row' para capturar todas as linhas de resultados
+      request.on("row", columns => {
+        result.push({
+          ID: columns[0].value, // Captura o valor da primeira coluna
+          Historia: columns[1].value, // Captura o valor da segunda coluna
+          ImagemURL: columns[2].value, // Captura o valor da terceira coluna
+        });
       });
-
-      // Ao completar a consulta, retorna o array com todas as avaliações
-      request.on('requestCompleted', () => {
-          callback(null, result); // Retorna os alunos encontrados
+  
+      // Evento 'requestCompleted' para retornar o resultado após a execução
+      request.on("requestCompleted", () => {
+        callback(null, result); // Retorna o aluno encontrado ou null
       });
-
-      request.addParameter("PALAVRA", TYPES.VarChar, PALAVRA);
+  
+      // Executa a consulta SQL
       connection.execSql(request); // Executa a consulta
-  })
-
-  connection.connect(); // Inicia a conexão
-}
+    });
+  
+    connection.connect(); // Inicia a conexão com o banco de dados
+  };
