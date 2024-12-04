@@ -67,7 +67,7 @@ body {
   }
   .button:active {
     transform: scale(0.95); /* Reduz o botão levemente */
-    background-color: #2e4909; /* (Opcional) Cor diferente ao clicar */
+    background-color: #2e4909; /* Cor diferente ao clicar */
   }
   
   .barra-escrita {
