@@ -1,5 +1,5 @@
 // // TESTE BASE - PARA FAZER O NOSSO
-// Função para buscar a história pelo ID
+// Função para buscar a história por uma palavra do texto
 async function buscarHist() {
     const historiaId = document.querySelector('.barra-escrita').value.trim();
     const loadingMessage = document.getElementById('loadingHist');
