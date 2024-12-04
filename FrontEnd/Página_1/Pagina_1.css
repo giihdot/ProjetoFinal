@@ -37,7 +37,11 @@ img {
     width: 12vw;
     height: 95vh;
     background-color: #f4f1ec;
+<<<<<<< HEAD
     background-color: #;
+=======
+    background-color: #80451f;
+>>>>>>> 1a19f50c6131dd4696b35d5aa59ec0fa763ed586
     flex-wrap: nowrap;
     align-content: space-around;
     justify-content: space-around;
