@@ -37,7 +37,7 @@ img {
     width: 12vw;
     height: 95vh;
     background-color: #f4f1ec;
-    background-color: #994500;
+    background-color: #;
     flex-wrap: nowrap;
     align-content: space-around;
     justify-content: space-around;
@@ -142,4 +142,3 @@ button {
 .next {
     right: 10px;
 }
-
