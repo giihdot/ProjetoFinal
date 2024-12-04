@@ -92,7 +92,7 @@ h1 {
   background-color: #4f6c26;
   color: #f4f1ec;
   padding: 2%;
-  width: 26.7vw;
+  width: 28vw;
 }
 
 .button {
@@ -112,7 +112,7 @@ h1 {
 }
 
 .barra-escrita {
-  width: 70%; /* Ajuste para a largura desejada */
+  width: 69%; /* Ajuste para a largura desejada */
   background-color: #f4f1ec; /* Cor de fundo */
   color: #4f6c26; /* Cor do texto */
   padding: 8px; /* Adiciona espaço interno para melhorar a aparência */
