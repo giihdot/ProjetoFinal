@@ -113,3 +113,123 @@ footer {
   justify-content: center;
   gap: 15%;
 }
+
+@media (max-width: 720px) {
+  body {
+    background-color: #f4f1ec;
+  }
+
+  header {
+    display: flex;
+    background-color: #80451f;
+    height: 20vh; /* Ajustando altura do cabeçalho */
+    width: 100%;
+    font-size: 4em; /* Ajustando o tamanho da fonte */
+    color: #f4f1ec;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 3% auto;
+    padding: 0.5em;
+    overflow: hidden;
+    background-color: #4f6c26;
+    gap: 1.2em; /* Ajustando o espaçamento entre os itens */
+    box-shadow: 0px 4px 8px #80451f(0, 0, 0, 0.2);
+    justify-content: center; /* Centralizando os itens */
+    font-size: 0.9em;
+  }
+
+  li {
+    float: none; /* Removendo o float */
+  }
+
+  li a {
+    display: block;
+    color: #f4f1ec;
+    text-align: center;
+    padding: 10px 12px; /* Ajustando o padding */
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #80451f;
+  }
+
+  .AG {
+    padding: 1.6em; /* Ajustando o padding */
+    width: 90.5vw; /* Ajustando a largura */
+    text-align: justify;
+    font-size: 1em; /* Reduzindo o tamanho da fonte */
+    color: #f4f1ec;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #80451f;
+  }
+
+  img {
+    width: 40vw; /* Aumentando a largura das imagens */
+    height: 40vh; /* Ajustando a altura */
+  }
+
+  .Junt-Img {
+    display: flex;
+    flex-direction:row;
+    gap: 5px 10px;
+    padding: 30px;
+  
+  }
+
+  .Junt_1 {
+    display: flex;
+    flex-direction: column; /* Mudando para coluna para melhor adaptação */
+    justify-content: center; /* Centralizando o conteúdo */
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: stretch;
+  }
+
+  .Relac {
+    padding: 1.6em; /* Ajustando o padding */
+    width: 90vw; /* Ajustando a largura */
+    margin: 2% auto;
+    text-align: justify;
+    font-size: 1.1em; /* Reduzindo o tamanho da fonte */
+    color: #f4f1ec;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #4f6c26;
+  }
+
+  .imagem {
+    width: 98vw; /* Ajustando a largura das imagens */
+    height: auto; /* Ajustando para manter a proporção */
+    padding-bottom: 20px; /* Ajustando o padding */
+  }
+
+  .Junt_2 {
+    display: flex;
+    flex-direction: column; /* Mudando para coluna */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+  }
+
+  footer {
+    text-align: center;
+    background-color: #80451f;
+    color: #f4f1ec;
+    padding: 1em;
+    width: 93.5VW;
+    box-shadow: 0px 4px 8px #4f6c26(0, 0, 0, 0.2);
+    flex-direction: column; /* Mudando para coluna */
+    display: flex;
+    justify-content: center;
+    gap: 10%; /* Ajustando o gap */
+  }
+}
