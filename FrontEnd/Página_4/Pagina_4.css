@@ -218,20 +218,33 @@ footer {
     height: 15vh;  /* Ajusta a altura do cabeçalho */
   }
 
-  /* Ajuste da lista de navegação */
   ul {
-    width: 100vw; /* Ajusta a largura para a tela inteira */
-    flex-direction: column; /* Organiza os itens em coluna */
-    gap: 1.2em; /* Reduz o espaço entre os itens */
+    display: flex;
+    list-style-type: none;
+    margin: 3% auto;
+    padding: 0.5em;
+    overflow: hidden;
+    background-color: #80451f;
+    gap: 1.2em; /* Ajustando o espaçamento entre os itens */
+    box-shadow: 0px 4px 8px #80451f(0, 0, 0, 0.2);
+    justify-content: center; /* Centralizando os itens */
+    font-size: 0.9em;
   }
 
   li {
-    width: 100%; /* Cada item ocupa toda a largura */
+    float: none; /* Removendo o float */
   }
 
   li a {
-    padding: 12px 16px; /* Ajusta o padding dos links */
-    font-size: 1.3em; /* Reduz o tamanho da fonte nos links */
+    display: block;
+    color: #f4f1ec;
+    text-align: center;
+    padding: 10px 12px; /* Ajustando o padding */
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #4f6c26;
   }
 
   /* Ajuste dos elementos .Junt_1 e .Junt_2 */
@@ -273,7 +286,7 @@ footer {
     margin-top: 20px; /* Espaço superior para o botão */
     cursor: pointer;
     position: absolute;
-    bottom: -80%; /* Coloca o botão a 10% do fundo */
+    bottom: -31%; /* Coloca o botão a 10% do fundo */
   }
 
   /* Ajuste da barra de escrita */
@@ -294,7 +307,7 @@ footer {
     padding: 11px 13px;  /* Ajusta o padding */
     cursor: pointer;
     position: absolute;
-    bottom: -170%; /* Coloca o botão a 10% do fundo */
+    bottom: -122%; /* Coloca o botão a 10% do fundo */
     margin-left: -15%;
   }
 
