@@ -273,7 +273,7 @@ footer {
     margin-top: 20px; /* Espaço superior para o botão */
     cursor: pointer;
     position: absolute;
-    bottom: -85%; /* Coloca o botão a 10% do fundo */
+    bottom: -80%; /* Coloca o botão a 10% do fundo */
   }
 
   /* Ajuste da barra de escrita */
@@ -294,7 +294,7 @@ footer {
     padding: 11px 13px;  /* Ajusta o padding */
     cursor: pointer;
     position: absolute;
-    bottom: -175%; /* Coloca o botão a 10% do fundo */
+    bottom: -170%; /* Coloca o botão a 10% do fundo */
     margin-left: -15%;
   }
 
