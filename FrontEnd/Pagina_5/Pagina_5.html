@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    
     <header>
         HISTÓRIAS INSPIRADORAS
     </header>
@@ -25,18 +25,20 @@
         </ul>
     </nav>
 
-    <center class="hist">
+    <center class="hist">x
         <h1 class="h1"> HISTÓRIAS PARA COMPARTILHAR </h1>
 
 
         <p style="color: #f4f1ec; text-align: justify;"> Busque uma História Inspiradora, colocando uma palavra: </p>
-
-        <section class="Junt">
-            <input type="text" class="barra-escrita" placeholder="Digite uma palavra, para buscar a história inspiradora" />
-            <button class="button" onclick="buscarHist()"> BUSCAR </button>
+        
+        <section class="Junt" >
+            
+            <input type="text" id="inputHistory" class="barra-escrita" placeholder="Digite uma palavra, para buscar a história inspiradora" />
+            <button class="button" onclick="searchHistory()"> BUSCAR  </button>
         </section>
 
-        <p id="loadingHist" style="display: none; color: #f4f1ec;"> Carregando...</p>
+        <nav id="blocoHistorias"> </nav>
+
         <section id="errorHist" style="display: none; color: #f4f1ec;"></section>
 
         <!-- Seção para exibir as histórias -->
@@ -45,10 +47,7 @@
             <img id="Hist_Imagem" src="" alt="Imagem da história" style="max-width: 100%; height: auto;" />
         </section>
         
-
-
     </center>
-
 
     <footer>
         <p>Giovanna Ferreira | N°07</p>
