@@ -20,17 +20,6 @@ header {
     align-items: center;
 }
 
-/* .titulo {
-    display: flex;
-    font-size: 4em;
-    padding: 0.5%;
-    width: 100vw;
-    justify-items: center;
-    font-family: 'Times New Roman', Times, serif;
-} */
-/* Kamilly pq fez dois css para o header? */
-
-
 .conceito,
 .conceito-2 {
     background-color: #f4f1ec;
@@ -142,3 +131,132 @@ footer {
     width: 40vw;
     height: 65vh;
 }
+
+/* Media Query para dispositivos com largura de tela até 720px */
+@media screen and (max-width: 720px) {
+
+    /* Ajustes no header */
+    header {
+      font-size: 5.3em; /* Reduz o tamanho da fonte */
+      height: 15vh; /* Ajusta a altura do cabeçalho */
+      width: 100vw; /* Ajusta a largura para 100% da tela */
+    }
+  
+    /* Ajustes no .Junt_1 */
+    .Junt_1 {
+      flex-direction: column; /* Organiza os itens em coluna */
+      align-items: center; /* Centraliza os itens */
+    }
+  
+    /* Ajuste na imagem */
+    img {
+      width: 40vw; /* Aumenta a largura da imagem para ocupar mais espaço */
+      height: auto; /* Ajusta a altura proporcionalmente */
+    }
+  
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 3% auto;
+        padding: 0.5em;
+        overflow: hidden;
+        background-color: #80451f;
+        gap: 1.2em; /* Ajustando o espaçamento entre os itens */
+        box-shadow: 0px 4px 8px #80451f(0, 0, 0, 0.2);
+        justify-content: center; /* Centralizando os itens */
+        font-size: 0.9em;
+      }
+    
+      li {
+        float: none; /* Removendo o float */
+      }
+    
+      li a {
+        display: block;
+        color: #f4f1ec;
+        text-align: center;
+        padding: 10px 12px; /* Ajustando o padding */
+        text-decoration: none;
+      }
+    
+      li a:hover {
+        background-color: #4f6c26;
+      }
+
+    .conceito,
+    .conceito-2 {
+    background-color: #f4f1ec;
+    padding: 2em;
+    margin: 2% auto;
+    width: 83.5vw;
+    text-align: justify;
+    font-size: 1.2em;
+    color: #f4f1ec;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #4f6c26;
+    }
+
+    /* Ajuste do conteúdo .Junt_2 */
+    .Junt_2 {
+      flex-direction: column; /* Organiza os itens em coluna */
+      width: 100%; /* Ajusta a largura */
+      gap: 1.5em; /* Adiciona espaçamento entre os itens */
+    }
+  
+    /* Ajustes no estilo de texto */
+    .Estilo_text {
+      width: 100%; /* Ajusta a largura para ocupar a tela inteira */
+      padding: 1em; /* Adiciona um padding */
+      font-size: 0.9em; /* Diminui o tamanho da fonte */
+    }
+  
+    /* Ajustes no layout do .Junt_3 */
+    .Junt_3 {
+      flex-direction: column; /* Organiza os itens em coluna */
+      gap: 1.5em; /* Ajusta o espaçamento entre os itens */
+    }
+  
+    /* Ajustes no slider */
+    .carousel {
+      width: 100%; /* Ajusta a largura do carrossel */
+      max-width: 100%; /* Limita a largura máxima */
+      margin: 0; /* Remove a margem */
+    }
+  
+    .slides {
+      width: 300%; /* Ajusta a largura das imagens no slider */
+    }
+  
+    .slides img {
+      width: 33.33%; /* Ajusta o tamanho das imagens */
+      height: auto; /* Ajusta a altura proporcionalmente */
+    }
+  
+    /* Ajustes nos botões do slider */
+    .slider-btn {
+      padding: 8px; /* Ajusta o padding dos botões */
+      font-size: 1em; /* Ajusta o tamanho da fonte dos botões */
+    }
+  
+    button {
+      padding: 8px; /* Ajusta o padding dos botões */
+    }
+
+    .img1 {
+        width: 47vw;
+        height: 60vh;
+        margin-right: 15px;
+    }
+    
+    .img2 {
+        width: 47vw;
+        height: 60vh;
+    }
+  
+    /* Ajustes no footer */
+    footer {
+      width: 100%; /* Ajusta a largura para 100% da tela */
+      flex-direction: column; /* Organiza os itens em coluna */
+      gap: 1em; /* Adiciona espaçamento entre os itens */
+    }
+  }
