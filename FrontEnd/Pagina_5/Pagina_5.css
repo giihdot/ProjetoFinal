@@ -111,6 +111,13 @@ body {
     justify-content: center;
     gap: 15%;
   }
+  
+  .Img_js {
+    width: 45vw;
+    height: 25vh;
+  }
+
+ 
 
  /* Media Query para dispositivos com largura de tela até 720px */
  @media screen and (max-width: 720px) {

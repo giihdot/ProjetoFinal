@@ -12,7 +12,7 @@ const config = {
     },
   },
   options: {
-    database: "PFG", // Nome do banco de dados
+    database: "PFG4", // Nome do banco de dados
     encrypt: false, // Desativar criptografia (pode mudar se necessário)
     port: 1433, // Porta padrão do SQL Server
     trustServerCertificate: true, // Necessário para evitar erro de SSL em ambiente local
