@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(userRoutes);
 
 // Inicia o servidor na porta 5000
-app.listen(5000, () => {
-  console.log("Servidor rodando em http://localhost:5000");
+app.listen(3000, () => {
+  console.log("Servidor rodando em http://localhost:3000");
 });
 
 
