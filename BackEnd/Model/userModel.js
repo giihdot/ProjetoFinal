@@ -12,7 +12,7 @@ exports.getAleatoriaMensagem = (callback) => {
       return callback(err, null); // Trata erros de conexão
     }
 
-    const query = `SELECT TOP 1 * FROM MensagemCurtas ORDER BY NEWID()`; // Consulta SQL para buscar todos os usuários
+    const query = `SELECT TOP 1 * FROM MensagensCurtas ORDER BY NEWID()`; // Consulta SQL para buscar todos os usuários
     const request = new Request(query, (err, rowCount) => {
       if (err) {
         return callback(err, null); // Trata erros de execução da consulta
@@ -59,7 +59,7 @@ exports.createMensagem = (data, callback) => {
     }
 
     // Consulta SQL para inserir um novo usuário na tabela Users
-    const query = `INSERT INTO MensagemCurtas (Mensagem, Tema) VALUES (@Mensagem, @Tema)`; // O campo 'id' é auto-incrementado
+    const query = `INSERT INTO MensagensCurtas (Mensagem, Tema) VALUES (@Mensagem, @Tema)`; // O campo 'id' é auto-incrementado
 
     const request = new Request(query, (err) => {
       if (err) {
@@ -97,7 +97,7 @@ exports.getHistoriaByPalavra = (palavra, callback) => {
       return;
     }
 
-    const query = `SELECT TOP 1 * FROM HistoriasInspiradoras WHERE Historia LIKE @palavra`;
+    const query = `SELECT TOP 1 * FROM HistorasInspiradoras WHERE Historia LIKE @palavra`;
     const request = new Request(query, (err) => {
       if (err && !isCallbackCalled) {
         isCallbackCalled = true;
