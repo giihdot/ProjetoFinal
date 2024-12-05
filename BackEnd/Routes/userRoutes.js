@@ -7,7 +7,7 @@ const userController = require("../Controller/userController");
 router.get("/mensagem", userController.getAleatoriaMensagem);
 
 // Rota POST para criar um nova mensagem
-router.post("/mensagem", userController.createMensagem);
+router.post("/mensagem/criar", userController.createMensagem);
 
 // Rota Get para buscar uma mensagem pelo ID
 router.get("/historia/:palavra", userController.getHistoriaByPalavra);

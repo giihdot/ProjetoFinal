@@ -33,11 +33,11 @@
 
             <p> Busque uma mensagem para seu Dia de Ação de Graças: </p>
 
-            <section id="loadingMessage" style="display: none;">Carregando...</section>
+            <!-- <section id="loadingMessage" style="display: none;">Carregando...</section> -->
             <section id="errorMessage" style="display: none; color: #f4f1ec;"></section>
-            <section id="Mensagem_Info" style="display: none;">
-                <p id="Mensagem_ID"></p>
-            </section>
+                <p > <h3><strong> Mensagem:</strong></h3> <span id="Mensagem_ID"></span></p>
+                <p > <h3><strong> Tema:</strong></h3> <span id="Mensagem_Info"></span></p>
+            
             <button class="button" onclick="buscarMensagem()"> BUSCAR MENSAGEM </button>
 
         </section>
@@ -55,17 +55,17 @@
 
             <p> Coloque aqui sua própria mensagem, do dia de Ação de Graças: </p>
 
-            <input type="text" class="barraa-escrita" placeholder="Crie a mensagem" />
+            <input type="text" id="Cria_Mensagem" class="barraa-escrita" placeholder="Crie a mensagem" />
+            <input type="text" id="Cria_Tema" class="barraa-escrita" placeholder="Crie o tema da Mensagem" />
             <button class="buttoon" onclick="addMensagem()"> FINALIZAR </button>
 
-
-            <p id="loadingMessage" style="display: none;"> Carregando...</p>
             <section id="errorMessage" style="display: none;"></section>
 
-            <section class="Mensagem-Info" id="Criação" style="display: none;">
-                <p><strong> TEMA: </strong> <span id="Cria_Mensagem"></span>
-                <p><strong> MENSAGEM: </strong> <span id="Cria_Mensagem"></span>
-            </section>
+            <br> <br>
+            <p > <h3><strong> Mensagem:</strong></h3> <span id="Exibir_Mensagem"></span></p>
+            <p > <h3><strong> Tema:</strong></h3> <span id="Exibir_Tema"></span></p>
+        
+           
         </section>
         <img class="imagem" src="Imagem_2.webp" alt="Imagem 2">
     </section>
