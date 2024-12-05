@@ -70,7 +70,7 @@ exports.createMensagem = (data, callback) => {
     });
 
     // Adiciona os parâmetros necessários para a inserção
-    request.addParameter("Mensagem", TYPES.VarChar, data.Mensagem);
+    request.addParameter("Mensagem", TYPES.NVarChar, data.Mensagem);
     request.addParameter("Tema", TYPES.VarChar, data.Tema);
 
 
