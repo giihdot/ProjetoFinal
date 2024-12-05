@@ -32,7 +32,7 @@ exports.getAleatoriaMensagem = (callback) => {
         id: columns[0].value, // Captura o valor da primeira coluna (ID)
         mensagem: columns[1].value, // Captura o valor da segunda coluna (mensagem)
         tema: columns[2].value, // Captura o valor da terceira coluna (tema)
-        
+
       });
     });
 
@@ -72,7 +72,7 @@ exports.createMensagem = (data, callback) => {
     // Adiciona os parâmetros necessários para a inserção
     request.addParameter("Mensagem", TYPES.VarChar, data.Mensagem);
     request.addParameter("Tema", TYPES.VarChar, data.Tema);
-    
+
 
     // Executa a consulta SQL para inserção no banco de dados
     connection.execSql(request);
@@ -84,46 +84,47 @@ exports.createMensagem = (data, callback) => {
 
 
 // Função para buscar um usuário pelo nome
-  exports.getHistoriaByPalavra = (palavra, callback) => {
-    const connection = createConnection(); // Cria a conexão com o banco de dados
-  
-    connection.on("connect", (err) => {
-      if (err) {
-        return callback(err, null); // Se houver erro de conexão
+exports.getHistoriaByPalavra = (palavra, callback) => {
+  const connection = createConnection();
+  let isCallbackCalled = false; // Variável de controle
+
+  connection.on("connect", (err) => {
+    if (err) {
+      if (!isCallbackCalled) {
+        isCallbackCalled = true;
+        callback(err, null);
       }
-  
-      // Consulta SQL para buscar um aluno pelo RM
-      const query = `SELECT TOP 1 * FROM HistoriasInspiradoras WHERE Historia LIKE @palavra`;
+      return;
+    }
 
-      const request = new Request(query, (err) => {
-        if (err) 
-          return callback(err, null); // Se houver erro na execução da consulta
-      });
-  
-      
-      request.addParameter("palavra", TYPES.VarChar, `%${palavra}%`); // Adiciona o RM como parâmetro
-
-
-      // Variável para armazenar os resultados da consulta
-      const result = [];
-  
-      // Evento 'row' para capturar todas as linhas de resultados
-      request.on("row", columns => {
-        result.push({
-          ID: columns[0].value, // Captura o valor da primeira coluna
-          Historia: columns[1].value, // Captura o valor da segunda coluna
-          ImagemURL: columns[2].value, // Captura o valor da terceira coluna
-        });
-      });
-  
-      // Evento 'requestCompleted' para retornar o resultado após a execução
-      request.on("requestCompleted", () => {
-        callback(null, result); // Retorna o aluno encontrado ou null
-      });
-  
-      // Executa a consulta SQL
-      connection.execSql(request); // Executa a consulta
+    const query = `SELECT TOP 1 * FROM HistoriasInspiradoras WHERE Historia LIKE @palavra`;
+    const request = new Request(query, (err) => {
+      if (err && !isCallbackCalled) {
+        isCallbackCalled = true;
+        return callback(err, null);
+      }
     });
-  
-    connection.connect(); // Inicia a conexão com o banco de dados
-  };
+
+    request.addParameter("palavra", TYPES.VarChar, `%${palavra}%`);
+
+    const result = [];
+    request.on("row", (columns) => {
+      result.push({
+        ID: columns[0].value,
+        Historia: columns[1].value,
+        ImagemURL: columns[2].value,
+      });
+    });
+
+    request.on("requestCompleted", () => {
+      if (!isCallbackCalled) {
+        isCallbackCalled = true;
+        callback(null, result.length > 0 ? result : []);
+      }
+    });
+
+    connection.execSql(request);
+  });
+
+  connection.connect();
+};

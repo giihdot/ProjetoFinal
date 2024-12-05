@@ -26,13 +26,17 @@ exports.createMensagem = (req, res) => {
   });
 };
 
-  // Função para buscar um história por palavra
-  exports.getHistoriaByPalavra = (req, res) => {
-    const { palavra } = req.params; // Extrai o ID dos parâmetros da URL
-  
-    userModel.getHistoriaByPalavra(palavra, (err, dados) => {
-      if (err) return  res.status(500).send("Erro ao buscar historia"); // Erro no servidor
-        res.json(dados); // Retorna os dados da história em formato JSON
-      
-    });
-  };
+// Função para buscar um história por palavra
+exports.getHistoriaByPalavra = (req, res) => {
+  const { palavra } = req.params;
+
+  userModel.getHistoriaByPalavra(palavra, (err, dados) => {
+    if (err) {
+      return res.status(500).send("Erro ao buscar história");
+    }
+    if (!dados || dados.length === 0) {
+      return res.status(404).json({ message: "Nenhuma história encontrada" });
+    }
+    res.json(dados); // Envia os dados em formato JSON
+  });
+};
