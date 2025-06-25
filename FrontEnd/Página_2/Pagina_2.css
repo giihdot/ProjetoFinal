@@ -20,17 +20,6 @@ header {
     align-items: center;
 }
 
-/* .titulo {
-    display: flex;
-    font-size: 4em;
-    padding: 0.5%;
-    width: 100vw;
-    justify-items: center;
-    font-family: 'Times New Roman', Times, serif;
-} */
-/* Kamilly pq fez dois css para o header? */
-
-
 .conceito,
 .conceito-2 {
     background-color: #f4f1ec;
@@ -165,22 +154,34 @@ footer {
       height: auto; /* Ajusta a altura proporcionalmente */
     }
   
-    /* Ajustes no menu lateral (ul) */
     ul {
-      width: 97vw; /* Aumenta a largura para ocupar toda a tela */
-      height: auto; /* Ajusta a altura */
-      flex-direction: row; /* Coloca os itens do menu em linha */
-      justify-content: space-around; /* Distribui os itens de forma espaçada */
-    }
-  
-    li {
-      width: auto; /* Ajusta o tamanho dos itens da lista */
-    }
-  
-    li a {
-      padding: 8px 12px; /* Ajusta o padding dos links */
-      font-size: 0.8em; /* Reduz um pouco o tamanho da fonte */
-    }
+        display: flex;
+        list-style-type: none;
+        margin: 3% auto;
+        padding: 0.5em;
+        overflow: hidden;
+        background-color: #80451f;
+        gap: 1.2em; /* Ajustando o espaçamento entre os itens */
+        box-shadow: 0px 4px 8px #80451f(0, 0, 0, 0.2);
+        justify-content: center; /* Centralizando os itens */
+        font-size: 0.9em;
+      }
+    
+      li {
+        float: none; /* Removendo o float */
+      }
+    
+      li a {
+        display: block;
+        color: #f4f1ec;
+        text-align: center;
+        padding: 10px 12px; /* Ajustando o padding */
+        text-decoration: none;
+      }
+    
+      li a:hover {
+        background-color: #4f6c26;
+      }
 
     .conceito,
     .conceito-2 {
@@ -259,4 +260,3 @@ footer {
       gap: 1em; /* Adiciona espaçamento entre os itens */
     }
   }
-  

@@ -112,8 +112,15 @@ body {
     gap: 15%;
   }
   
-  /* Media Query para dispositivos com largura de tela até 720px */
-@media screen and (max-width: 720px) {
+  .Img_js {
+    width: 45vw;
+    height: 25vh;
+  }
+
+ 
+
+ /* Media Query para dispositivos com largura de tela até 720px */
+ @media screen and (max-width: 720px) {
   /* Corpo */
   body {
     background-color: #f4f1ec;
@@ -173,7 +180,7 @@ body {
     width: 90vw; /* Ajusta a largura para 90% da tela */
     padding: 1.5em; /* Ajusta o padding */
     margin-left: 1%; /* Ajusta a margem à esquerda */
-    height: auto; /* Ajusta a altura para o conteúdo */
+    height: 150vh; /* Ajusta a altura para o conteúdo */
   }
 
   /* Botões */
@@ -188,6 +195,7 @@ body {
     display: inline-block;
     font-size: 14px; /* Ajusta o tamanho da fonte */
     width: 90vw;
+    
   }
 
   .button:active {
@@ -209,7 +217,7 @@ body {
   .barra-escrita:focus {
     outline: none;
     border-color: #80451f;
-    width: 90vw;
+    width: 87vw;
   }
 
   /* Junt */
@@ -241,3 +249,4 @@ body {
     gap: 1em; /* Ajusta o espaçamento */
   }
 }
+  

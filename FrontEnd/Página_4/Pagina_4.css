@@ -213,3 +213,156 @@ footer {
   justify-content: center;
   gap: 15%;
 }
+
+/* Media Query para dispositivos com largura de tela até 720px (tablets e dispositivos pequenos) */
+@media screen and (max-width: 720px) {
+
+  /* Ajuste do header */
+  header {
+    font-size: 4em; /* Reduz o tamanho da fonte */
+    height: 15vh;  /* Ajusta a altura do cabeçalho */
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 3% auto;
+    padding: 0.5em;
+    overflow: hidden;
+    background-color: #80451f;
+    gap: 1.2em; /* Ajustando o espaçamento entre os itens */
+    box-shadow: 0px 4px 8px #80451f(0, 0, 0, 0.2);
+    justify-content: center; /* Centralizando os itens */
+    font-size: 0.9em;
+  }
+
+  li {
+    float: none; /* Removendo o float */
+  }
+
+  li a {
+    display: block;
+    color: #f4f1ec;
+    text-align: center;
+    padding: 10px 12px; /* Ajustando o padding */
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #4f6c26;
+  }
+
+  /* Ajuste dos elementos .Junt_1 e .Junt_2 */
+  .Junt_1, .Junt_2 {
+    flex-direction: column; /* Organiza os itens em coluna */
+    width: 100vw;  /* Ajusta a largura */
+    gap: 3%;  /* Ajusta o espaçamento */
+  }
+
+  /* Ajuste da imagem */
+  .imagem2 {
+    width: 94vw;  /* Ajusta a largura da imagem */
+    height: 94vh; /* Ajusta a altura proporcionalmente */
+  }
+
+  .imagem {
+    width: 46vw;
+    height: 100vh;
+  }
+
+  /* Ajuste do tamanho do título */
+  h1 {
+    font-size: 1.4em;  /* Diminui o tamanho da fonte */
+    padding: 4%;  /* Ajusta o padding */
+  }
+
+  /* Ajuste do contêiner .Est */
+  .Est {
+    width: 40vw; /* Aumenta a largura para preencher melhor a tela */
+    padding: 3%;  /* Ajusta o padding */
+  }
+
+  /* Ajuste do botão */
+  .button {
+    font-size: 14px;  /* Reduz o tamanho da fonte */
+    padding: 11px 13px;  /* Ajusta o padding */
+    position: relative;  /* Ajusta a posição do botão */
+    bottom: auto;
+    margin-top: 20px; /* Espaço superior para o botão */
+    cursor: pointer;
+    position: absolute;
+    bottom: -31%; /* Coloca o botão a 10% do fundo */
+  }
+
+  /* Ajuste da barra de escrita */
+  .barraa-escrita {
+    width: 95%; /* Aumenta a largura */
+    font-size: 15px; /* Diminui o tamanho da fonte */
+  }
+
+  /* Ajuste do footer */
+  footer {
+    flex-direction: column;  /* Organiza o footer em coluna */
+    gap: 5%;  /* Ajusta o espaçamento */
+  }
+
+  /* Ajuste de outros botões */
+  .buttoon {
+    font-size: 14px;  /* Diminui o tamanho da fonte */
+    padding: 11px 13px;  /* Ajusta o padding */
+    cursor: pointer;
+    position: absolute;
+    bottom: -122%; /* Coloca o botão a 10% do fundo */
+    margin-left: -15%;
+  }
+
+  .Esta {
+    background-color: #80451f;
+    color: #f4f1ec;
+    padding: 2%;
+    width: 75vw;
+    height: 80vh;
+    margin-bottom: 7%;
+  }
+
+  .Junt_2 {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 75vw;
+    margin-bottom: 5%;
+  }  
+
+  .Junt_1 {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-bottom: 5%;
+  }
+
+  header {
+    display: flex;
+    background-color: #4f6c26;
+    height: 18vh;
+    width: 103%;
+    font-size: 6em;
+    color: #f4f1ec;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+

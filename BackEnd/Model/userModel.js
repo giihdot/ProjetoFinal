@@ -97,7 +97,7 @@ exports.getHistoriaByPalavra = (palavra, callback) => {
       return;
     }
 
-    const query = `SELECT TOP 1 * FROM HistoriasInspiradoras WHERE Historia LIKE @palavra`;
+    const query = `SELECT TOP 1 * FROM HistorasInspiradoras WHERE Historia LIKE @palavra`;
     const request = new Request(query, (err) => {
       if (err && !isCallbackCalled) {
         isCallbackCalled = true;
